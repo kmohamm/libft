@@ -6,13 +6,14 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:29:44 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/20 14:33:10 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/05/21 11:23:27 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int			ft_strlen(char *str)
 {
 	int i;
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
