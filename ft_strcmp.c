@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:44:08 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/24 14:21:40 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/05/24 13:54:31 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/05/24 15:16:21 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		return (c - 32);
-	}
-	else
-		return (c);
+	int i;
+
+	i = 0;
+	if (!(s1) || !(s2))
+		return (-1);
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+		return (s1[i] - s2[i]);
+	
 }

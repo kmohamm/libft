@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:44:08 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/24 14:21:40 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/05/24 14:11:26 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/05/24 15:24:55 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
+	size_t i;
+
+	i = 0;
+	while (src[i] != '\0' && (size_t)i < n)
 	{
-		return (c - 32);
+		dst[i] = src[i];
+		i++;
 	}
-	else
-		return (c);
+	while (i < n)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

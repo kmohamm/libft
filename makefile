@@ -6,26 +6,30 @@
 #    By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 14:01:05 by kmohamma          #+#    #+#              #
-#    Updated: 2019/05/20 14:47:59 by kmohamma         ###   ########.fr        #
+#    Updated: 2019/05/24 13:45:59 by kmohamma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft.a
-SRCS= *.c
-OBJECTS=*.o
-HEADERS_FOLDER=includes
+NAME = libft.a
+CC = gcc
+FLAGS = -Wall -Werror -Wextra
+ARC = ar rc
+SRC = *.c
+OBJ = *.o
 
-all: make_lib
+# all: $(NAME)
 
-make_lib:
-	gcc -I$(HEADERS_FOLDER) -c $(SRCS)
-	ar -rv $(NAME) $(OBJECTS)
+$(NAME):
+	$(CC) $(FLAGS) -c $(SRC)
+	$(ARC) $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+all: $(NAME)
+
 clean:
-	/bin/rm -f *.o
+	rm -f *.o
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
