@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 14:14:52 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/27 14:58:43 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/05/28 10:11:36 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/05/28 10:57:29 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int		i;
-	char	*dest;
+	unsigned char *dest;
+	unsigned char *sorc;
 
-	i = 0;
-	while (s1[i] != '\0')
+	dest = (unsigned char *)dst;
+	sorc = (unsigned char *)src;
+	if (len <= 0)
+		return (dest);
+	if (sorc < dest)
 	{
-		i++;
+		while (len)
+		{
+			dest[len - 1] = sorc[len - 1];
+			len--;
+		}
+		return (dest);
 	}
-	i++;
-	dest = (char *)malloc(sizeof(char) * i);
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	else
 	{
-		dest[i] = s1[i];
-		i++;
+		ft_memcpy(dest, sorc, len);
+		return (dest);
 	}
-	dest[i] = '\0';
-	return (dest);
 }

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 14:14:52 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/27 14:58:43 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/05/28 13:14:33 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/05/28 13:39:59 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	int		i;
-	char	*dest;
+	int a;
+	int b;
 
-	i = 0;
-	while (s1[i] != '\0')
+	a = 0;
+	b = 0;
+	while (s1[a] != '\0')
 	{
-		i++;
+		a++;
 	}
-	i++;
-	dest = (char *)malloc(sizeof(char) * i);
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	while (s2[b] != '\0')
 	{
-		dest[i] = s1[i];
-		i++;
+		s1[a + b] = s2[b];
+		b++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	s1[a + b] = '\0';
+	return (s1);
 }

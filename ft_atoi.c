@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 14:14:52 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/27 14:58:43 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/05/29 08:33:39 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/05/29 15:22:29 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+int	ft_atoi(const char *str)
 {
-	int		i;
-	char	*dest;
+	int	res;
+	int	negative;
 
-	i = 0;
-	while (s1[i] != '\0')
+	negative = 1;
+	res = 0;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		++str;
+	if (*str == '-')
+		negative = -1;
+	if (*str == '-' || *str == '+')
+		++str;
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		i++;
+		res = res * 10 + (*str - 48);
+		++str;
 	}
-	i++;
-	dest = (char *)malloc(sizeof(char) * i);
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (res * negative);
 }

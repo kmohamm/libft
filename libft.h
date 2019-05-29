@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 12:17:07 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/24 14:42:56 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/05/27 10:01:45 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,3 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
-
