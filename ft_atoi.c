@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:33:39 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/29 15:22:29 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/05/30 12:15:48 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	ft_atoi(const char *str)
 	if (*str == '-')
 		negative = -1;
 	if (*str == '-' || *str == '+')
-		++str;
+		str++;
 	while (*str && *str >= '0' && *str <= '9')
 	{
 		res = res * 10 + (*str - 48);
-		++str;
+		str++;
 	}
 	return (res * negative);
 }
