@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:26:33 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/31 14:47:25 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/03 09:22:17 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*x++ = *y++;
 	}
 	return (dst);
-}§
+}

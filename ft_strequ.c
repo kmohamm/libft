@@ -6,13 +6,13 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 10:52:36 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/05/31 11:03:54 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/03 13:04:09 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ftstrequ(char const *s1, char const *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	char *str1;
 	char *str2;
