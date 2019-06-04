@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:16:11 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/03 15:20:29 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/04 14:24:50 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (len >= 0)
 	{
 		if (s[len] == (char)c)
-			return (&((char*)s)[len]));
+			return (&((char*)s)[len]);
 		len--;
 	}
 	return (NULL);
