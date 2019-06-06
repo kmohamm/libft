@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:21:06 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/06 11:28:39 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/06/06 16:19:30 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/06/06 16:25:39 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if (ap && *ap)
+	char *sub;
+	int		i;
+
+	if (s)
 	{
-		free(*ap);
-		*ap = NULL;
+		i = 0;
+		if (!(sub = (char*)malloc(sizeof(*s) * (len + 1))))
+			return (NULL);
+		while (s[start] && len-- > 0)
+		sub[i] = '\0';
+		return (sub);
 	}
+	else
+		return (NULL);
 }
