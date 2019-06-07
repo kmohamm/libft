@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 14:10:08 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/04 14:40:30 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/06/07 14:09:09 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/06/07 14:10:17 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-		ft_putstr_fd(s, fd);
-		ft_putchar_fd('\n', fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 16:19:30 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 13:57:13 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/06/07 09:43:09 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/06/07 09:52:03 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char *ft_strtrim(char const *s)
 {
-	char *sub;
 	int		i;
+	int		j;
+	int		k;
+	char  *dst;
 
 	if (s)
 	{
 		i = 0;
-		if (!(sub = (char*)malloc(sizeof(*s) * (len + 1))))
+		j = ft_strlen((char *)(s)) - 1;
+		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+			i++;
+		if (!(dst = (char*)malloc(sizeof(*dst) * (j - i + 1))))
 			return (NULL);
-		while (s[start] && len-- > 0)
-			sub[i++] = s[start++];
-		sub[i] = '\0';
-		return (sub);
+		while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+			j--;
+		k = 0;
+		while (i <= j)
+		{
+			dst[k++] = s[i];
+			i++;
+		}
+		dst[k] = '\0';
+		return (dst);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
+

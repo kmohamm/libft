@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 16:19:30 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 13:57:13 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/06/07 09:32:16 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/06/07 09:41:20 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	char *sub;
-	int		i;
+	int		len;
+	int		sign;
+	long nb;
+	char *str;
 
-	if (s)
-	{
-		i = 0;
-		if (!(sub = (char*)malloc(sizeof(*s) * (len + 1))))
-			return (NULL);
-		while (s[start] && len-- > 0)
-			sub[i++] = s[start++];
-		sub[i] = '\0';
-		return (sub);
-	}
-	else
+	nb = (n < 0) ? -(long)n : n;
+	sign = (n < 0) ? -1 : 0;
+	len = (sign == -1) ? 2 : 1;
+	while ((nb /= 10) >= 1)
+		len++;
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
+	str[len] = '\0';
+	nb = (n < 0) ? -(long)n : n;
+	while (len-- + sign)
+	{
+		str[len] = nb % 10 + 48;
+		nb /= 10;
+	}
+	(len == 0) ? str[len] = '-' : 0;
+	return (str);
 }
