@@ -6,26 +6,27 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:26:33 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/03 09:22:17 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/07 16:20:36 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *x;
-	char *y;
+	size_t		i;
+	char		*dpos;
+	const char	*spos;
 
-	if (n == 0 || dst == src)
+	i = 0;
+	dpos = dest;
+	spos = src;
+	while (i < n)
 	{
-		return (dst);
+		if (n == 0 || dpos == spos)
+			return (dest);
+		dpos[i] = spos[i];
+		i++;
 	}
-	x = (char *)dst;
-	y = (char *)src;
-	while (--n)
-	{
-		*x++ = *y++;
-	}
-	return (dst);
+	return (dest);
 }
