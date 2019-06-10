@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 15:07:39 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 15:12:28 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:29:44 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char v[10];
-	long nb;
+	char	v[10];
+	long	nb;
 	int		i;
 
 	nb = n;

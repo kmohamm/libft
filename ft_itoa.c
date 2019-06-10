@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 09:32:16 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 09:41:20 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:45:08 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	int		sign;
-	long nb;
-	char *str;
+	long	nb;
+	char	*str;
 
 	nb = (n < 0) ? -(long)n : n;
 	sign = (n < 0) ? -1 : 0;

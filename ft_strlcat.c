@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 14:12:10 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/10 13:50:29 by kmohamma         ###   ########.fr       */
+/*   Created: 2019/06/10 08:23:23 by kmohamma          #+#    #+#             */
+/*   Updated: 2019/06/10 13:42:59 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	char		*d;
+	const char	*s;
+	size_t		n;
+	size_t		dlen;
+
+	d = dst;
+	s = src;
+	n = size;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s != '\0')
+	{
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
+		}
+		s++;
+	}
+	*d = '\0';
+	return (dlen + (s - src));
 }

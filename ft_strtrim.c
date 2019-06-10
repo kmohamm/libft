@@ -6,18 +6,18 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 09:43:09 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 09:52:03 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:41:43 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
 	int		i;
 	int		j;
 	int		k;
-	char  *dst;
+	char	*dst;
 
 	if (s)
 	{
@@ -40,4 +40,3 @@ char *ft_strtrim(char const *s)
 	}
 	return (NULL);
 }
-

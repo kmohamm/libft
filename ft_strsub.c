@@ -6,7 +6,7 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:19:30 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/07 13:57:13 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:43:45 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char *sub;
+	char	*sub;
 	int		i;
 
 	if (s)

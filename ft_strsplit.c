@@ -6,13 +6,13 @@
 /*   By: kmohamma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:38:14 by kmohamma          #+#    #+#             */
-/*   Updated: 2019/06/06 16:11:04 by kmohamma         ###   ########.fr       */
+/*   Updated: 2019/06/10 14:12:44 by kmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_wd_count (const char *s, char d)
+static int		find_wd_count(const char *s, char d)
 {
 	int		position;
 	int		nb;
@@ -33,7 +33,7 @@ static int	find_wd_count (const char *s, char d)
 	return (nb);
 }
 
-static int	find_wd_len(const char *s, char d)
+static int		find_wd_len(const char *s, char d)
 {
 	int		len;
 
@@ -46,7 +46,7 @@ static int	find_wd_len(const char *s, char d)
 	return (len);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		wd;
